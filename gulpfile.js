@@ -22,9 +22,9 @@ gulp.task('js', function () {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./sass/**/*.scss')
+  return gulp.src('src/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['js', 'sass'], function () {
