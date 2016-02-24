@@ -3,9 +3,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var filters = require('gulp-filter');
-
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
 
 var pkg = require('./package.json');
 var dirs = pkg['intlytics-configs'].directories;
@@ -24,6 +25,8 @@ gulp.task('js', function () {
 gulp.task('sass', function () {
   return gulp.src('src/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist'));
 });
 
