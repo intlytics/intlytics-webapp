@@ -31,6 +31,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('build', ['js', 'sass'], function () {
+    //var filter = filters(['**/*', '!src/sass']);
     var filter = filters([
         'components/**/*',
         'view1/**/*',
