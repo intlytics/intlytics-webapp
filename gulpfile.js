@@ -24,10 +24,10 @@ gulp.task('js', function () {
 
 gulp.task('sass', function () {
   return gulp.src('src/sass/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist'));
+      .pipe(sass().on('error', sass.logError))
+      .pipe(cssmin())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', ['js', 'sass'], function () {
